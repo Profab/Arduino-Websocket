@@ -83,7 +83,8 @@ void loop() {
   
   if (client.connected()) {
     
-    data = webSocketClient.getData();
+    // data is modified via pointer
+    webSocketClient.getData(data);
 
     if (data.length() > 0) {
       Serial.print("Received data: ");
